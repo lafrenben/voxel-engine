@@ -13,11 +13,11 @@
   ],
   "dependencies": {
     "voxel": "0.3.1",
-    "voxel-mesh": "lafrenben/voxel-mesh#three662",
+    "voxel-mesh": "lafrenben/voxel-mesh",
     "voxel-view": "lafrenben/voxel-view",
     "voxel-raycast": "0.2.1",
     "voxel-control": "0.0.7",
-    "voxel-texture": "lafrenben/voxel-texture#three662",
+    "voxel-texture": "lafrenben/voxel-texture",
     "voxel-physical": "0.0.10",
     "voxel-region-change": "0.1.0",
     "raf": "0.0.1",
