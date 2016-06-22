@@ -585,12 +585,13 @@ Game.prototype.addMarker = function(position) {
 }
 
 Game.prototype.addAABBMarker = function(aabb, color) {
-  var geometry = new THREE.CubeGeometry(aabb.width(), aabb.height(), aabb.depth())
-  var material = new THREE.MeshBasicMaterial({ color: color || 0xffffff, wireframe: true, transparent: true, opacity: 0.5, side: THREE.DoubleSide })
-  var mesh = new THREE.Mesh(geometry, material)
-  mesh.position.set(aabb.x0() + aabb.width() / 2, aabb.y0() + aabb.height() / 2, aabb.z0() + aabb.depth() / 2)
-  this.scene.add(mesh)
-  return mesh
+  var geometry = new THREE.BoxGeometry(aabb.width(), aabb.height(), aabb.depth())
+  var material = new THREE.MeshBasicMaterial()
+  var cube = new THREE.Mesh(geometry, material)
+  cube.position.set(aabb.x0() + aabb.width() / 2, aabb.y0() + aabb.height() / 2, aabb.z0() + aabb.depth() / 2)
+  var bbox = new THREE.BoxHelper(cube, color)
+  this.scene.add(bbox)
+  return bbox
 }
 
 Game.prototype.addVoxelMarker = function(x, y, z, color) {
